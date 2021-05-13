@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
   <title>Work Day Scheduler</title>
 </head>
 
@@ -19,39 +19,65 @@
     <p class="lead">A simple calendar app for scheduling your work day</p>
     <p id="currentDay" class="lead"></p>
   </header>
-  <div class="container">
+  <div class="container-fluid">
     <!-- Timeblocks go here -->
-    <div class="row">
-      <div class="col-3 bg-light" id="timeSelect">
-        Time
-      </div>
-      <div class="col-1" id="sun">
-        <span>Sun</span>
-      </div>
-      <div class="col-1" id="mon">
-        <span>Mon</span>
-      </div>
-      <div class="col-1" id="tue">
-        <span>Tue</span>
-      </div>
-      <div class="col-1" id="wedy">
-        <span>Wed</span>
-      </div>
-      <div class="col-1" id="thu">
-        <span>Thu</span>
-      </div>
-      <div class="col-1" id="fri">
-        <span>Fri</span>
-      </div>
-      <div class="col-1" id="sat">
-        <span>Sat</span>
-      </div>
-      <div class="col-2" id="emptyColumn"></div>
-    </div>
-  </div>
-
+    <table class="table-responsive-sm table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th scope="col" style="width:150px;">Time</th>
+          <th scope="col">Mon</th>
+          <th scope="col">Tue</th>
+          <th scope="col">Wed</th>
+          <th scope="col">Thu</th>
+          <th scope="col">Fri</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row" >9am-11am</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row">11am-1pm</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row">1pm-3pm</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row">3pm-5pm</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row">5pm-7pm</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="assets/jscript/jscript.js"></script>
 </body>
 
 </html>
