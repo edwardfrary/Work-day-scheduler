@@ -56,7 +56,6 @@ function loadTasks(){
 for (i = 0;i<tasks.length;i++){;
    textBoxLoad = tasks[i].text;
    tdElIdLoad = tasks[i].tdElId;
-   console.log(textBoxLoad + " " + tdElIdLoad);
    createTask(textBoxLoad, tdElIdLoad);
 };};
 
