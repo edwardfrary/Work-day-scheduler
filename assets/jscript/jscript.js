@@ -5,7 +5,6 @@ var tdElId = 0;
 $("td").on("click", function(){
    tdElId=$(this)
    .attr("id");
-   console.log(tdElId);
 });
 // clear any previous values when modal is triggered
 $("#inputModal").on("show.bs.modal", function () {
@@ -26,8 +25,7 @@ $("#inputModal .btn-save").click(function () {
 
    //parse text data to the create task function
    if (taskText){
-      createTask(taskText);
-      console.log(taskText);
+      createTask(taskText, tdElId);
    };
 
    // save in tasks array
@@ -44,11 +42,22 @@ function saveTasks() {
 };
 
 //function to create the actual tasks themselves
-function createTask(textData){
+function createTask(textData, tdElId){
    var cardBody = $("<div>")
    .addClass("card-body")
    .text(textData);
-
    $("#" + tdElId).append(cardBody);
 
 };
+
+//function to load the tasks on refresh
+function loadTasks(){
+   tasks = JSON.parse(localStorage.getItem("data"));
+for (i = 0;i<tasks.length;i++){;
+   textBoxLoad = tasks[i].text;
+   tdElIdLoad = tasks[i].tdElId;
+   console.log(textBoxLoad + " " + tdElIdLoad);
+   createTask(textBoxLoad, tdElIdLoad);
+};};
+
+loadTasks();
