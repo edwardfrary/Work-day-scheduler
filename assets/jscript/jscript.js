@@ -46,27 +46,45 @@ function saveTasks() {
 //function to create the actual tasks themselves
 function createTask(textData, tdElId) {
 
+   //gives the created task's delete button the ability to be identified 
+   var deleteTaskHandler = "deleteTask('" + tdElId + "')";
+
    var cardBody = $("<div>")
       .addClass("card-body")
       .text(textData);
 
    var deleteBtn = $("<button>")
       .attr("type", "button")
-      .attr("onClick", "deleteTask()")
+      .attr("onClick", deleteTaskHandler)
       .html("&#10006;")
       .addClass("close text-light delete-btn");
 
    cardBody.append(deleteBtn);
-   $("#" + tdElId).replaceWith(cardBody);
+   $("#" + tdElId).append(cardBody);
 };
 
 //delete the task when the "X" button is clicked
-function deleteTask(){
-   console.log("Working");
+function deleteTask(tdElId){
+
+   var deleteTaskIdHolder = "#" + tdElId;
+   //empties the cell where the "X" was clicked
+   $(deleteTaskIdHolder).empty();
+
+   //removes the task from the array and then saves the new array
+  var index = $.inArray(tdElId, tasks);
+  tasks.splice(index, 1);
+   console.log(tasks);
+   saveTasks();
 };
+
 //function to load the tasks on refresh
 function loadTasks() {
    tasks = JSON.parse(localStorage.getItem("data"));
+
+   if (!tasks) {
+      tasks = [];
+   };
+
    for (i = 0; i < tasks.length; i++) {
       ;
       textBoxLoad = tasks[i].text;
