@@ -1,9 +1,11 @@
 var tasks = [];
 var tdElId = 0;
+var now = moment();
+
 //get the id of the td element being selected
-$("td").on("click", function(){
-   tdElId=$(this)
-   .attr("id");
+$("td").on("click", function () {
+   tdElId = $(this)
+      .attr("id");
 });
 
 // clear any previous values when modal is triggered
@@ -24,7 +26,7 @@ $("#inputModal .btn-save").click(function () {
    $("#inputModal").modal("hide");
 
    //parse text data to the create task function
-   if (taskText){
+   if (taskText) {
       createTask(taskText, tdElId);
    };
 
@@ -42,29 +44,35 @@ function saveTasks() {
 };
 
 //function to create the actual tasks themselves
-function createTask(textData, tdElId){
+function createTask(textData, tdElId) {
+
    var cardBody = $("<div>")
-   .addClass("card-body")
-   .text(textData);
+      .addClass("card-body")
+      .text(textData);
 
    var deleteBtn = $("<button>")
-   .attr("type", "button")
-   .attr("data-dimiss", "modal")
-   .html("&#10006;")
-   .addClass("close text-light");
+      .attr("type", "button")
+      .attr("onClick", "deleteTask()")
+      .html("&#10006;")
+      .addClass("close text-light delete-btn");
 
    cardBody.append(deleteBtn);
-   $("#" + tdElId).append(cardBody);
-
+   $("#" + tdElId).replaceWith(cardBody);
 };
 
+//delete the task when the "X" button is clicked
+function deleteTask(){
+   console.log("Working");
+};
 //function to load the tasks on refresh
-function loadTasks(){
+function loadTasks() {
    tasks = JSON.parse(localStorage.getItem("data"));
-for (i = 0;i<tasks.length;i++){;
-   textBoxLoad = tasks[i].text;
-   tdElIdLoad = tasks[i].tdElId;
-   createTask(textBoxLoad, tdElIdLoad);
-};};
+   for (i = 0; i < tasks.length; i++) {
+      ;
+      textBoxLoad = tasks[i].text;
+      tdElIdLoad = tasks[i].tdElId;
+      createTask(textBoxLoad, tdElIdLoad);
+   };
+};
 
 loadTasks();
