@@ -16,64 +16,97 @@
     <p class="lead">A simple calendar app for scheduling your work day</p>
     <p id="currentDay" class="lead"></p>
   </header>
-  <div class="container-fluid">
+  <div class="container">
     <!-- Timeblocks go here -->
-    <table class="table table-responsive-sm table-striped table-bordered">
-      <thead>
-        <tr>
-          <th scope="col" style="width:150px;">Time</th>
-          <th scope="col">Mon</th>
-          <th scope="col">Tue</th>
-          <th scope="col">Wed</th>
-          <th scope="col">Thu</th>
-          <th scope="col">Fri</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th id="row1" scope="row">9am-11am</th>
-          <td id="row1Mon" data-toggle="modal" data-target="#inputModal"></td>
-          <td id="row1Tue" data-toggle="modal" data-target="#inputModal"></td>
-          <td id="row1Wed" data-toggle="modal" data-target="#inputModal"></td>
-          <td id="row1Thu" data-toggle="modal" data-target="#inputModal"></td>
-          <td id="row1Fri" data-toggle="modal" data-target="#inputModal"></td>
-        </tr>
-        <tr>
-          <th id="row2" scope="row">11am-1pm</th>
-          <td id="row2Mon" data-toggle="modal" data-target="#inputModal"></td>
-          <td id="row2Tue" data-toggle="modal" data-target="#inputModal"></td>
-          <td id="row2Wed" data-toggle="modal" data-target="#inputModal"></td>
-          <td id="row2Thu" data-toggle="modal" data-target="#inputModal"></td>
-          <td id="row2Fri" data-toggle="modal" data-target="#inputModal"></td>
-        </tr>
-        <tr>
-          <th id="row3" scope="row">1pm-3pm</th>
-          <td id="row3Mon" data-toggle="modal" data-target="#inputModal"></td>
-          <td id="row3Tue" data-toggle="modal" data-target="#inputModal"></td>
-          <td id="row3Wed" data-toggle="modal" data-target="#inputModal"></td>
-          <td id="row3Thu" data-toggle="modal" data-target="#inputModal"></td>
-          <td id="row3Fri" data-toggle="modal" data-target="#inputModal"></td>
-        </tr>
-        <tr>
-          <th id="row4" scope="row">3pm-5pm</th>
-          <td id="row4Mon" data-toggle="modal" data-target="#inputModal"></td>
-          <td id="row4Tue" data-toggle="modal" data-target="#inputModal"></td>
-          <td id="row4Wed" data-toggle="modal" data-target="#inputModal"></td>
-          <td id="row4Thu" data-toggle="modal" data-target="#inputModal"></td>
-          <td id="row4Fri" data-toggle="modal" data-target="#inputModal"></td>
-        </tr>
-        <tr>
-          <th id="row5" scope="row">5pm-7pm</th>
-          <td id="row5Mon" data-toggle="modal" data-target="#inputModal"></td>
-          <td id="row5Tue" data-toggle="modal" data-target="#inputModal"></td>
-          <td id="row5Wed" data-toggle="modal" data-target="#inputModal"></td>
-          <td id="row5Thu" data-toggle="modal" data-target="#inputModal"></td>
-          <td id="row5Fri" data-toggle="modal" data-target="#inputModal"></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="row">
+      <div class="col-12">
+        <span class="bg-light border" id="dayId"></span>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="row">
+        <div class="col-3 border bg-dark text-light">
+          9am
+        </div>
+        <div class="col-9 border timeslot" id="9" data-toggle="modal" data-target="#inputModal">
 
-    <!--Modal starts here-->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 border bg-dark text-light">
+          10am
+        </div>
+        <div class="col-9 border timeslot" id="10" data-toggle="modal" data-target="#inputModal">
+
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-3 border bg-dark text-light">
+          11am
+        </div>
+        <div class="col-9 border timeslot " id="11" data-toggle="modal" data-target="#inputModal">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 border bg-dark text-light">
+          12pm
+        </div>
+        <div class="col-9 border timeslot" id="12" data-toggle="modal" data-target="#inputModal">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 border bg-dark text-light">
+          1pm
+        </div>
+        <div class="col-9 border timeslot" id="13" data-toggle="modal" data-target="#inputModal">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 border bg-dark text-light">
+          2pm
+        </div>
+        <div class="col-9 border timeslot" id="14" data-toggle="modal" data-target="#inputModal">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 border bg-dark text-light">
+          3pm
+        </div>
+        <div class="col-9 border timeslot" id="15" data-toggle="modal" data-target="#inputModal">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 border bg-dark text-light">
+          4pm
+        </div>
+        <div class="col-9 border timeslot" id="16" data-toggle="modal" data-target="#inputModal">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 border bg-dark text-light">
+          5pm
+        </div>
+        <div class="col-9 border timeslot" id="17" data-toggle="modal" data-target="#inputModal">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 border bg-dark text-light">
+          6pm
+        </div>
+        <div class="col-9 border timeslot" id="18" data-toggle="modal" data-target="#inputModal">
+
+        </div>
+      </div>
+    </div>
+
     <!-- Modal Header-->
     <div class="modal fade" id="inputModal">
       <div class="modal-dialog modal-dialog-centered" role="document">

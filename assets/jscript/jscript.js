@@ -1,8 +1,11 @@
 var tasks = [];
 var tdElId = 0;
-var now = moment().format("dddd LT");
+var currentTime = new Date();
+var now = currentTime.getHours();
+var day = moment().format("dddd");
+
 //get the id of the td element being selected
-$("td").on("click", function () {
+$(".timeslot").on("click", function () {
    tdElId = $(this)
       .attr("id");
 });
@@ -32,10 +35,27 @@ $("#inputModal .btn-save").click(function () {
    // save in tasks array
    tasks.push({
       tdElId: tdElId,
-      text: taskText
+      text: taskText,
    });
    saveTasks();
 });
+
+//function to assign card body colors when the task is near or past it's due date/time
+function timeAssign() {
+
+   for (i = 9; i < 19; i++) {
+
+      var timeDue = $("#" + [i]).attr("id");
+
+      if (timeDue - now <= 2 && timeDue - now >= 0) {
+         $(".card-body").addClass("bg-warning");
+      };
+
+      if (timeDue <= now) {
+         $("#" + [i]).addClass("bg-danger");
+      };
+   }
+};
 
 //save function
 function saveTasks() {
@@ -50,6 +70,7 @@ function createTask(textData, tdElId) {
 
    var cardBody = $("<div>")
       .addClass("card-body")
+      .val(tdElId)
       .text(textData);
 
    var deleteBtn = $("<button>")
@@ -60,6 +81,7 @@ function createTask(textData, tdElId) {
 
    cardBody.append(deleteBtn);
    $("#" + tdElId).append(cardBody);
+   saveTasks();
 };
 
 //delete the task when the "X" button is clicked
@@ -91,6 +113,10 @@ function loadTasks() {
       tdElIdLoad = tasks[i].tdElId;
       createTask(textBoxLoad, tdElIdLoad);
    };
+
+   $('#dayId').text(day);
 };
 
+
 loadTasks();
+setInterval(timeAssign, 1000);
