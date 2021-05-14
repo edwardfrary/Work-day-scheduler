@@ -7,3 +7,8 @@ In addition the colour of the rows will change as time goes by in a day:
 Red: Already passed
 Yellow: Within the next 2 hours (rounded up to the nearest whole hour)
 White: On schedule and more than 2 hours away.
+
+Please see attached screenshot.
+App can be found here: https://edwardfrary.github.io/Work-day-scheduler/
+
+Thank you
