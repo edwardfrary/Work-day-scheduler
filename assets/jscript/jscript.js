@@ -1,7 +1,6 @@
 var tasks = [];
 var tdElId = 0;
-var now = moment();
-
+var now = moment().format("dddd LT");
 //get the id of the td element being selected
 $("td").on("click", function () {
    tdElId = $(this)
