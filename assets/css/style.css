@@ -1,0 +1,9 @@
+.timeSlotAlignment {
+    position: relative;
+    top: 40%;
+}
+
+.row {
+
+    min-height: 150px;
+}

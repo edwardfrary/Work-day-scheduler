@@ -48,7 +48,7 @@ function timeAssign() {
       var timeDue = $("#" + [i]).attr("id");
 
       if (timeDue - now <= 2 && timeDue - now >= 0) {
-         $(".card-body").addClass("bg-warning");
+         $("#" + [i]).addClass("bg-warning");
       };
 
       if (timeDue <= now) {
@@ -96,6 +96,7 @@ function deleteTask(tdElId) {
    tasks.splice(index, 1);
 
    saveTasks();
+   loadTasks();
 };
 
 //function to load the tasks on refresh
@@ -117,6 +118,7 @@ function loadTasks() {
    $('#dayId').text(day);
 };
 
-
+//laods the tasks at page refresh to populate the saved tasks and to color-code the time
 loadTasks();
+timeAssign();
 setInterval(timeAssign, 1000);
