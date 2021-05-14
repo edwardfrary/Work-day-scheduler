@@ -1,11 +1,11 @@
 var tasks = [];
 var tdElId = 0;
 //get the id of the td element being selected
-
 $("td").on("click", function(){
    tdElId=$(this)
    .attr("id");
 });
+
 // clear any previous values when modal is triggered
 $("#inputModal").on("show.bs.modal", function () {
    // clear values
@@ -46,6 +46,14 @@ function createTask(textData, tdElId){
    var cardBody = $("<div>")
    .addClass("card-body")
    .text(textData);
+
+   var deleteBtn = $("<button>")
+   .attr("type", "button")
+   .attr("data-dimiss", "modal")
+   .html("&#10006;")
+   .addClass("close text-light");
+
+   cardBody.append(deleteBtn);
    $("#" + tdElId).append(cardBody);
 
 };
