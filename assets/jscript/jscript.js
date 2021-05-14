@@ -64,16 +64,16 @@ function createTask(textData, tdElId) {
 };
 
 //delete the task when the "X" button is clicked
-function deleteTask(tdElId){
+function deleteTask(tdElId) {
 
    var deleteTaskIdHolder = "#" + tdElId;
    //empties the cell where the "X" was clicked
    $(deleteTaskIdHolder).empty();
 
    //removes the task from the array and then saves the new array
-  var index = $.inArray(tdElId, tasks);
-  tasks.splice(index, 1);
-   console.log(tasks);
+   var index = $.inArray(tdElId, tasks);
+   tasks.splice(index, 1);
+
    saveTasks();
 };
 
@@ -81,6 +81,7 @@ function deleteTask(tdElId){
 function loadTasks() {
    tasks = JSON.parse(localStorage.getItem("data"));
 
+   //creates am empty task array if one is not present after load
    if (!tasks) {
       tasks = [];
    };
