@@ -5,10 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="./assets/css/style.css" />
   <title>Work Day Scheduler</title>
 </head>
@@ -19,65 +16,148 @@
     <p class="lead">A simple calendar app for scheduling your work day</p>
     <p id="currentDay" class="lead"></p>
   </header>
-  <div class="container-fluid">
+  <div class="container">
     <!-- Timeblocks go here -->
-    <table class="table-responsive-sm table table-striped table-bordered">
-      <thead>
-        <tr>
-          <th scope="col" style="width:150px;">Time</th>
-          <th scope="col">Mon</th>
-          <th scope="col">Tue</th>
-          <th scope="col">Wed</th>
-          <th scope="col">Thu</th>
-          <th scope="col">Fri</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row" >9am-11am</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <th scope="row">11am-1pm</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <th scope="row">1pm-3pm</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <th scope="row">3pm-5pm</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <th scope="row">5pm-7pm</th>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="assets/jscript/jscript.js"></script>
+    <div class="row">
+      <div class="col-sm-12 text-center display-4">
+        <span class="bg-light border" id="dayId"></span>
+      </div>
+    </div>
+
+      <div class="row">
+        <div class="col-3 border bg-dark text-light text-center">
+          <span class = "timeSlotAlignment">
+            9am
+            </span>
+        </div>
+        <div class="col-9 border timeslot" id="9" data-toggle="modal" data-target="#inputModal">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 border bg-dark text-light text-center">
+          <span class = "timeSlotAlignment">
+            10am
+            </span>
+        </div>
+        <div class="col-9 border timeslot" id="10" data-toggle="modal" data-target="#inputModal">
+
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-3 border bg-dark text-light text-center">
+          <span class = "timeSlotAlignment">
+            11am
+            </span>
+        </div>
+        <div class="col-9 border timeslot " id="11" data-toggle="modal" data-target="#inputModal">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 border bg-dark text-light text-center">
+          <span class = "timeSlotAlignment">
+          12pm
+          </span>
+        </div>
+        <div class="col-9 border timeslot" id="12" data-toggle="modal" data-target="#inputModal">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 border bg-dark text-light text-center">
+          <span class = "timeSlotAlignment">
+            1pm
+            </span>
+        </div>
+        <div class="col-9 border timeslot" id="13" data-toggle="modal" data-target="#inputModal">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 border bg-dark text-light text-center">
+          <span class = "timeSlotAlignment">
+            2pm
+            </span>
+        </div>
+        <div class="col-9 border timeslot" id="14" data-toggle="modal" data-target="#inputModal">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 border bg-dark text-light text-center">
+          <span class = "timeSlotAlignment">
+            3pm
+            </span>
+        </div>
+        <div class="col-9 border timeslot" id="15" data-toggle="modal" data-target="#inputModal">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 border bg-dark text-light text-center">
+          <span class = "timeSlotAlignment">
+            4pm
+            </span>
+        </div>
+        <div class="col-9 border timeslot" id="16" data-toggle="modal" data-target="#inputModal">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 border bg-dark text-light text-center">
+          <span class = "timeSlotAlignment">
+            5pm
+            </span>
+        </div>
+        <div class="col-9 border timeslot" id="17" data-toggle="modal" data-target="#inputModal">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-3 border bg-dark text-light text-center">
+          <span class = "timeSlotAlignment">
+            6pm
+            </span>
+        </div>
+        <div class="col-9 border timeslot" id="18" data-toggle="modal" data-target="#inputModal">
+
+        </div>
+      </div>
+
+
+    <!-- Modal Header-->
+    <div class="modal fade" id="inputModal">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-dark">
+            <h5 class="modal-title text-light" id="task-form-modal"><u>New Task</u></h5>
+            <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <!-- Modal body-->
+          <div class="modal-body bg-light">
+            <form>
+              <div class="form-group">
+                <label for="taskDescription">Task description</label>
+                <textarea id="taskDescription" rows="3" class="form-control"></textarea>
+              </div>
+            </form>
+          </div>
+          <!--Model footer where the save button is-->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-save btn-dark">Save Task</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="assets/jscript/jscript.js"></script>
 </body>
 
 </html>
